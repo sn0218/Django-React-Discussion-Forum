@@ -2,14 +2,15 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-from .models import Thread, Post, User
-from .serializers import ThreadSerializer, PostSerializer, MyTokenObtainPairSerializer, RegisterSerializer
+from .models import Thread, Post, User, Pin, Profile
+from .serializers import ThreadSerializer, PostSerializer, MyTokenObtainPairSerializer, RegisterSerializer, PinSerializer, ProfileSerializer
 import json
 from rest_framework import generics
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.pagination import PageNumberPagination
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your views here.
@@ -42,10 +43,16 @@ def getThreads(request):
     serializer = ThreadSerializer(result_page, many=True)
 
     return paginator.get_paginated_response(serializer.data)
-
+    
 
 @api_view(['GET'])
 def getThread(request, thread_id):
+    try:
+        thread = Thread.objects.get(pk=thread_id)
+    except thread.DoesNotExist:
+        content = {"The Thread does not exist."}
+        return Response(content)
+
     thread = Thread.objects.get(pk=thread_id)
     serializer = ThreadSerializer(thread, many=False)
 
@@ -130,7 +137,102 @@ def createPost(request):
     new_post.save()
 
     serializer = PostSerializer(new_post, many=False)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def bookmark(request):
+    
+    # get the data 
+    data = json.loads(request.body)
+    
+    userID =  data['user']
+    threadID = data['thread']
+    pin = data['pin']
+   
+    if pin:
+        new_pin = Pin(
+            user = User.objects.get(pk=userID),
+            thread = Thread.objects.get(pk=threadID)
+        )
+        new_pin.save()
+
+        serializer = PinSerializer(new_pin, many=False)
+        return Response(serializer.data)
+    else:
+        pin = Pin.objects.filter(user=User.objects.get(pk=userID), thread=Thread.objects.get(pk=threadID))
+        pin.delete()
+        return Response("The bookmark is removed.")
+
+
+@api_view(['GET'])
+def checkBookmarked(request, thread_id, user_id):
+    
+    pin = Pin.objects.filter(user=User.objects.get(pk=user_id), thread=Thread.objects.get(pk=thread_id))
+    
+    if pin.exists():
+        return Response({"pinned": "true"})
+
+    return Response({"pinned": "false"})
+
+
+@api_view(['GET'])
+def getBookmarkedThreads(request, user_id):
+    paginator = PageNumberPagination()
+    paginator.page_size = 10
+
+    # get the printed thread
+    user = User.objects.get(pk=user_id)
+    pins = user.user_pin.all().order_by('id').reverse()
+    ids = [pin.thread.id for pin in pins]
+    threads = [Thread.objects.get(pk=id) for id in ids]
+
+    result_page = paginator.paginate_queryset(threads, request)
+    serializer = ThreadSerializer(result_page, many=True)
+
+    return paginator.get_paginated_response(serializer.data)
+
+
+@api_view(['GET'])
+def getTopThreads(request):
+    # get top 5 threads with most replies
+    threads = Thread.objects.all().order_by("replyCount").reverse()[0:5]
+
+    serializer = ThreadSerializer(threads, many=True)
 
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def getThreadsTopic(request, topic_id):
+    paginator = PageNumberPagination()
+    paginator.page_size = 2
+
+    # get threads by topic
+    threads = Thread.objects.filter(topic=topic_id).all().order_by('-updated')
+
+    result_page = paginator.paginate_queryset(threads, request)
+    serializer = ThreadSerializer(result_page, many=True)
+
+    return paginator.get_paginated_response(serializer.data)
+
+
+@api_view(['GET'])
+def profile(request, user_id):
+    # get profile
+    profile = Profile.objects.get(pk=user_id)
+
+    serializer = ProfileSerializer(profile, many=False)
+    return Response(serializer.data)
+
+
+
+
+    
+
+
+
+
+
 
 

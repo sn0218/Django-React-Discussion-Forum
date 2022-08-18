@@ -8,11 +8,11 @@ import Typography from '@mui/material/Typography';
 import Moment from 'react-moment';
 
 
-const ThreadListItem = ({thread}) => {
+const ThreadListItem = ({thread}, {index}) => {
   return (
     <div className="thread-list-item">
       <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        <ListItem alignItems="flex-start">
+        <ListItem alignItems="flex-start" key={{index}} className="thread-list">
           <Link to = {`/threads/${thread.id}`} style={{ textDecoration: 'none', color: 'black' }}>
             <ListItemText 
               primary={thread?.subject} 

@@ -9,8 +9,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="#">
+        My Forum
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -25,7 +25,7 @@ const Footer = () => {
     sx={{
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '180px'
+      minHeight: '70vh'
       
     }}
   >
@@ -47,7 +47,7 @@ const Footer = () => {
         <Typography variant="body1">
           © 2022 MyForum. All right reserved.
         </Typography>
-        
+        <Copyright />
        
       </Container>
     </Box>

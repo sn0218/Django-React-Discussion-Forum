@@ -7,15 +7,16 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ThreadForm from './components/ThreadForm'
 import Home  from './pages/Home';
 import Thread from './pages/Thread'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import PrivateRoute from './utils/PrivateRoute'
 import { AuthProvider} from './context/AuthContext'
-import Test from './pages/Test'
 
+import Bookmark from "./pages/Bookmark";
+import Topic from './pages/Topic'
+import Profile from './pages/Profile'
 
 function App() {
   /*
@@ -32,11 +33,14 @@ function App() {
        
         <Routes>
           <Route path="/" element={<Home />} />
-      
           <Route path="/signup" element={<Signup />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/threads/:id" element={<Thread />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/topic/:id" element={<Topic />} />
+          <Route  element={<PrivateRoute />}>
+            <Route path="/bookmark" element={<Bookmark />} exact/>
+            <Route path="/profile" element={<Profile />} exact/>
+          </Route>
         </Routes>
         <Footer />
       </div>

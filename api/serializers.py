@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
-from .models import Thread, Post, Profile, User
+from .models import Thread, Post, Profile, User, Pin
 from django.contrib.auth.password_validation import validate_password
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
@@ -61,3 +61,13 @@ class PostSerializer(ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
+
+class PinSerializer(ModelSerializer):
+    class Meta:
+        model = Pin
+        fields =  '__all__'
+
+class ProfileSerializer(ModelSerializer):
+    class Meta:
+        model = Profile
+        fields =  ['name', 'bio', 'avatar', 'status']

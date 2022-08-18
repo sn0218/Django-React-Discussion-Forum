@@ -8,15 +8,22 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from "react-router-dom"
 import AuthContext from '../context/AuthContext'
 
-const pages = ['Home'];
-const settings = ['Profile' , 'Logout'];
+
+const options = {
+  1: "Entertainment" ,
+  2: 'Sports' ,
+  3: 'Gaming' ,
+  4: 'Music' ,
+  5: 'Technology' ,
+  6: 'News',
+  7: 'Anime' ,
+  8: 'Drama & Moive' 
+}
 
 const ResAppBar = () => {
  
@@ -43,8 +50,8 @@ const ResAppBar = () => {
   let {logoutUser} = useContext(AuthContext)
 
   return (
-    <AppBar position="static" style={{ background: '#6a5acd' }}>
-      <Container maxWidth="xl">
+    <AppBar position="fixed" style={{ background: '#6a5acd' }}>
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -64,17 +71,16 @@ const ResAppBar = () => {
             MyForum
           </Typography>
        
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
               color="inherit"
+              aria-label="open drawer"
+              onClick={handleOpenNavMenu}
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -90,20 +96,28 @@ const ResAppBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: 'block' ,
               }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link 
-                    style={{textDecoration:"none", color:'black', textTransform: 'capitalize'}} 
-                    to={`/${page}`}>
-                    {page}
-                    </Link>
-                  </Typography>
+            >  
+              <Link 
+                style={{textDecoration:"none", color:'black', textTransform: 'capitalize'}} 
+                to={`/`}>
+                <MenuItem key='Home' onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Home</Typography>
                 </MenuItem>
+              </Link>
+
+              {Object.keys(options).map((key, index) => (
+                [
+                <Link style={{textDecoration:"none", color:'black', textTransform: 'capitalize'}} 
+                to={`/topic/${key}`}>
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
+                  <Typography  textAlign="center">{options[key]}</Typography>
+                </MenuItem>
+                </Link>
+                ]
               ))}
+
             </Menu>
           </Box>
         
@@ -127,18 +141,7 @@ const ResAppBar = () => {
             MyForum
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                <Link style={{textDecoration:"none", color:'white'}} to={`/${page}`}>
-                    {page}
-                    </Link>
-              </Button>
-            ))}
-            
+           
           </Box>
        
           <Box sx={{ flexGrow: 0 }}>
@@ -152,7 +155,7 @@ const ResAppBar = () => {
             sx={{
               mr: 2,
               p: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: 'flex' ,
               fontFamily: 'monospace',
               fontWeight: 500,
               letterSpacing: '12',
@@ -185,8 +188,12 @@ const ResAppBar = () => {
                 onClose={handleCloseUserMenu}
               >
 
-              <MenuItem key='profile' onClick={handleCloseUserMenu}>
+              <MenuItem key='profile' component={Link} to="/profile">
                 <Typography textAlign="center">Profile</Typography>
+
+              </MenuItem>
+              <MenuItem key='bookmark' component={Link} to="/bookmark" >
+                <Typography textAlign="center">Bookmark</Typography>
 
               </MenuItem>
               <MenuItem key='logout' onClick={logoutUser}>
@@ -205,7 +212,7 @@ const ResAppBar = () => {
             href="/signup"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display:  'flex' ,
               fontFamily: 'monospace',
               fontWeight: 500,
               letterSpacing: '12',
@@ -222,7 +229,7 @@ const ResAppBar = () => {
             href="/login"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: 'flex' ,
               fontFamily: 'monospace',
               fontWeight: 500,
               letterSpacing: '12',

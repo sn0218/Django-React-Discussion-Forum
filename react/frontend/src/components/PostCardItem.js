@@ -7,7 +7,7 @@ const PostCardItem = ({post}) => {
     
   return (
     <div>
-      <Card sx={{ minWidth: 300, marginTop: 3}} >
+      <Card sx={{ minWidth: 300, marginTop: 3}} elevation={2}>
         <CardContent>
           <Typography  component="div"></Typography>
             <Typography style={{whiteSpace: 'pre-line' }} sx={{ m: 1, p: 1 }} variant="body1" >

@@ -31,7 +31,6 @@ class Thread(models.Model):
     topic = models.CharField(max_length=32, choices=TOPIC_CHOICES, default=1)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    pinned = models.BooleanField(default=False)
     replyCount = models.IntegerField(default=0)
 
     def __str__(self):
@@ -47,6 +46,14 @@ class Post(models.Model):
 
     def __str__(self):
         return f'Post of {self.thread.subject} is posted by {self.creator.username}.'
+
+
+class Pin(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_pin", verbose_name="pinned by")
+    thread = models.ForeignKey(Thread, on_delete=models.CASCADE, related_name="thread_pin")
+
+    def __str__(self):
+        return f"{self.user.username} pinned thread id: {self.thread.id}"
 
 
 
