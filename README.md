@@ -49,10 +49,10 @@ The React app is already integrated to Django app for an easy start.
 First, clone or download the repository from gitHub
 To run the application, please following commands.
 ```
-
 pip install -r requirements.txt
 python manage.py runserver
 The application will be available on http://127.0.0.1:8000/
+
 ```
 
 ## Additional Information
