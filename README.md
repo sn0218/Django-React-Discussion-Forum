@@ -86,58 +86,58 @@ The application will be available on http://127.0.0.1:8000/
 
 
 ## Application API
-The application supports the following API routes:
+The application supports the following API routes:  
 
 Generate token and refresh token
 ```
 api/ token/ 
 api/ token/refresh/
-```
+```  
 
 Resigter / sign up 
 ```
 api/ register/ 
-```
+```  
 
 Get user's profile
 ```
 api/ profile/<int:user_id>
-```
+```  
 
 Retrieve all threads
 ```
 api/ threads/
-```
+```  
 
 Retrieve a single thread
 ```
 api/ threads/<int:thread_id>
-```
+```  
 
 Get all the posts/replies of a thread
 ```
 api/ threads/<int:thread_id>/posts 
-```
+```  
 
 Get the top 5 threads sorted by number of replies
 ```
 api/ topThreads/
-```
+```  
 
 Get threads by topic
 ```
 api/ threads/topic/<int:topic_id>
-```
+```  
 
 Create/add a new thread
 ```
 api/ createThread/
-```
+```  
 
 Create/add a new post (reply a thread)
 ```
 api/ createPost/ 
-```
+```  
 
 Add bookmark / Remove bookmark
 ```
