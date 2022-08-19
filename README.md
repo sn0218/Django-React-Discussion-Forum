@@ -40,7 +40,6 @@ The discussion forum application is built by Django and React. The forum web app
 -   Material UI
 -   React Bootstrap
 -   sqlite3
--   
 
 ## Distinctiveness and Complexity
 
