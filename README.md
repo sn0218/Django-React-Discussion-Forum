@@ -5,18 +5,24 @@ The discussion forum application is built by Django and React. The forum web app
 
 
 ## Distinctiveness and Complexity
+
 This forum app is different from other projects in the course. This forum app is neither a social network nor an e-commerce site.  
+
 The forum app exhibits different functionalities to provide an online platform for discussion. The forum app permits guests to view all the threads and posts without an account. There are different views to view threads sorted by different topics. Users who are authenticated can add a new threads to start a dicusssion and add post to reply own thread and threads created by other users. In addition, authenticated users can make bookmarks to threads and edit their avatar and biography in profile page..
 
-The complexity of the forum app is higher than any projects in CS50 Web. The forum app separates the frontend and backend into two technologies. The frontend and user interface is built by React and the backend is built by Django. React provides component based architecture to manipulate the DOM to create a single-page forum application.  
+The complexity of the forum app is higher than any projects in CS50 Web. The forum app separates the frontend and backend into two technologies. The frontend and user interface is built by JavaScript Library React and the backend is built by Django. React provides component based architecture to manipulate the DOM easily to create a single-page forum app.  
 
 In the user interface, infinite scroll is employed to replace pagination to provide users smoother experience to browse threads in different devices. Viewing most of the pages in this forum app does not require any reload and refresh of the page given the advantages of React.  
 
 Django is used to build the web API and database to function the backend. There are 4 django models to create the database to store forum data. The backend has various endpoints available through the created API to allow the client side to retrieve and return data.  
 
-This forum app has token-based authentication to validate the user login. 
+The forum app is designed to be mobile responsive to adpat different resolutions by Material UI library. To enhance the authentication, token based authentication is used to manage the login and logout.
 
 ## Contained Files
+In `react-front` folder, it stores all the files of frontend.  
+`./build` a build directory with a production build of your app
+
+
 
 ## Getting Started to run the app
 ```
