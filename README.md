@@ -100,69 +100,69 @@ The application supports the following API routes:
 
 Generate token and refresh token
 ```
-api/ token/ 
-api/ token/refresh/
+api/token/ 
+api/token/refresh/
 ```  
 
 Resigter / sign up 
 ```
-api/ register/ 
+api/register/ 
 ```  
 
 Get user's profile
 ```
-api/ profile/<int:user_id>
+api/profile/<int:user_id>
 ```  
 
 Retrieve all threads
 ```
-api/ threads/
+api/threads/
 ```  
 
 Retrieve a single thread
 ```
-api/ threads/<int:thread_id>
+api/threads/<int:thread_id>
 ```  
 
 Get all the posts/replies of a thread
 ```
-api/ threads/<int:thread_id>/posts 
+api/threads/<int:thread_id>/posts 
 ```  
 
 Get the top 5 threads sorted by number of replies
 ```
-api/ topThreads/
+api/topThreads/
 ```  
 
 Get threads by topic
 ```
-api/ threads/topic/<int:topic_id>
+api/threads/topic/<int:topic_id>
 ```  
 
 Create/add a new thread
 ```
-api/ createThread/
+api/createThread/
 ```  
 
 Create/add a new post (reply a thread)
 ```
-api/ createPost/ 
+api/createPost/ 
 ```  
 
 Add bookmark / Remove bookmark
 ```
-api/ pin/ 
+api/pin/ 
 
 ```
 
 Check user's bookmark of a given thread
 ```
-api/ pin/<int:thread_id>&&<int:user_id>
+api/pin/<int:thread_id>&&<int:user_id>
 ```
 
 Get all bookmarked threads
 ```
-api/ bookmark/<int:user_id> 
+api/bookmark/<int:user_id> 
 ```
 
 
@@ -183,4 +183,4 @@ In this project, you are asked to build a web application of your own. The natur
 - Though there is not a hard requirement here, a README.md in the neighborhood of 500 words is likely a solid target, assuming the other requirements are also satisfied.
 
 ## Demonstration
-To be added
+To be added.
