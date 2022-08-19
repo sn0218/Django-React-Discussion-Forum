@@ -10,24 +10,25 @@ This forum app is different from other projects in the course. This forum app is
 
 The forum app exhibits different functionalities to provide an online platform for discussion. The forum app permits guests to view all the threads and posts without an account. There are different views to view threads sorted by different topics. Users who are authenticated can add a new threads to start a dicusssion and add post to reply own thread and threads created by other users. In addition, authenticated users can make bookmarks to threads and edit their avatar and biography in profile page..
 
-The complexity of the forum app is higher than any projects in CS50 Web. The forum app separates the frontend and backend into two technologies. The frontend and user interface is built by JavaScript Library React and the backend is built by Django. React provides component based architecture to manipulate the DOM easily to create a single-page forum app.  
+The complexity of the forum app is higher than any projects in CS50 Web. The forum app separates the frontend and backend into two technologies. The frontend and user interface is built by JavaScript Library React and the backend is built by Django. React provides component based architecture to manipulate the DOM easily to create a single-page forum app, so we don't need Django to render the html pages.  
 
 In the user interface, infinite scroll is employed to replace pagination to provide users smoother experience to browse threads in different devices. Viewing most of the pages in this forum app does not require any reload and refresh of the page given the advantages of React.  
 
 Django is used to build the web API and database to function the backend. There are 4 django models to create the database to store forum data. The backend has various endpoints available through the created API to allow the client side to retrieve and return data.  
 
-The forum app is designed to be mobile responsive to adpat different resolutions by Material UI library. To enhance the authentication, token based authentication is used to manage the login and logout.
+The forum app is designed to be mobile responsive to adpat different resolutions by Material UI library. To enhance the authentication, token based authentication (JWT) is used to manage signup, login and logout.
+
 
 ## Contained Files
 In `react-front` folder, it stores all the files of frontend built by React.  
 -   `./build` a build directory with a production build of the forum app.
 -   `./public` contain favicon and index.html etc.
 -   `./src` stores all files of React components and pages.
-    -   `./components` contain different components of forum app such as Header, footer, and various forms.
-    -   `./pages` store defined pages, for example, Home.js, Login.js and Thread.js etc.
+    -   `./components` contain different components of forum app such as Header, footer, AppBar and various forms.
+    -   `./pages` store defined pages, for example, Home.js, Login.js, signup.js and Thread.js etc.
     -   `./utils` contain PrivateRoute.js for the implementation of private routes
     -   `/App.css` styling of the forum app
-    -   `./index.js/` the top structure level of forum app which have App.js components as its child
+    -   `./index.js/` the top structure level of forum app which has App.js component as its child
     -   `./App.js` the forum app components
   
 In `myforum` folder, it contains settings and url configuration of the forum app.
@@ -43,8 +44,14 @@ In `api` folder, it consists of a wide range of files of the backend and views.
 
 
 
-## Getting Started to run the app
+## Getting Started 
+The React app is already integrated to Django app for an easy start.  
+To run the application, please following commands.
 ```
+
+pip install -r requirements.txt
+python manage.py runserver
+The application will be available on http://127.0.0.1:8000/
 
 ```
 
