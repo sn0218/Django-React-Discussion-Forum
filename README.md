@@ -3,6 +3,31 @@
 ## Description
 The discussion forum application is built by Django and React. The forum web app allows any user to view threads. Users can register and login to create new thread and reply to any threads to join any discussion.
 
+## Functions and Features
+### Functions
+-   Registration
+-   Login / Logout
+-   Browse all threads sorted by updating date
+-   Browse threads by topic
+-   Add new thread
+-   Add new post to reply in a thread
+-   Bookmark Page
+-   User Profile Page (Edit Avatar and biography)
+
+### Features
+-   Guest / unauthenticated user can browse all the threads and posts
+-   Token based authentication
+-   Infinite Scrolling 
+-   Mobile responsive
+
+
+### Tech Stack
+-   Python Django
+-   React.js
+-   HTML / CSS
+-   Material UI
+-   React Bootstrap
+
 
 ## Distinctiveness and Complexity
 
@@ -49,6 +74,7 @@ The React app is already integrated to Django app for an easy start.
 First, clone or download the repository from gitHub
 To run the application, please following commands.
 ```
+
 pip install -r requirements.txt
 python manage.py runserver
 The application will be available on http://127.0.0.1:8000/
@@ -57,9 +83,9 @@ The application will be available on http://127.0.0.1:8000/
 
 ## Additional Information
 
-## Features
 
-## Tech Stack
+
+
 
 
 ## Application API
@@ -105,9 +131,6 @@ Get the number of likes for a post
 ```
 GET /likeCount/<int:post_id>
 ```
-
-
-
 
 
 ## Requirements
