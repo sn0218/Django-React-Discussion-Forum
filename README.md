@@ -76,6 +76,10 @@ The React app is already integrated to Django app for an easy start.
 First, clone or download the repository from gitHub
 To run the application, please following commands.
 ```
+python3 -m venv env
+
+source env/bin/activate
+
 pip install -r requirements.txt
 
 python manage.py runserver
@@ -83,6 +87,12 @@ python manage.py runserver
 The application will be available on http://127.0.0.1:8000/
 ```
 
+## Additional Information
+I built this forum app in conda virtual environement using Anaconda 3.  
+The npm packages used in frontend is output as file in the following path.
+```
+./react/frontend/npmlist.json
+```
 
 
 ## Application API
