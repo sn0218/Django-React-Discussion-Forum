@@ -15,19 +15,19 @@ The discussion forum application is built by Django and React. The forum web app
 -   User Profile Page (Edit Avatar and biography)
 
 ### Features
--   Guest / unauthenticated user can browse all the threads and posts
--   Token based authentication
+-   Token Based Authentication
 -   Infinite Scrolling 
--   Mobile responsive
+-   Mobile Responsive
+-   Guest / unauthenticated user browse all the threads and posts
 
 
 ### Tech Stack
 -   Python Django
 -   React.js
--   HTML / CSS
+-   HTML5 / CSS
 -   Material UI
 -   React Bootstrap
-
+-   sqlite3
 
 ## Distinctiveness and Complexity
 
@@ -91,45 +91,71 @@ The application will be available on http://127.0.0.1:8000/
 ## Application API
 The application supports the following API routes:
 
-Compose a new post
+Generate token and refresh token
 ```
-POST /post/
-```
-
-Retrieve all the posts
-```
-GET /posts/
+api/ token/ 
+api/ token/refresh/
 ```
 
-Retrieve a single post
+Resigter / sign up 
 ```
-GET /posts/<int:post_id>
-```
-
-Edit a post
-```
-PUT /edit/<int:post_id>
+api/ register/ 
 ```
 
-Follow and unfollow a user (implemeneted in profile page)
+Get user's profile
 ```
-POST /follow
-POST /unfollow
-```
-
-Like and unlike a post
-```
-POST /like/<int:post_id>
+api/ profile/<int:user_id>
 ```
 
-Get the number of followers for a user
+Retrieve all threads
 ```
-GET /followerCount/<str:name>
+api/ threads/
 ```
 
-Get the number of likes for a post
+Retrieve a single thread
 ```
-GET /likeCount/<int:post_id>
+api/ threads/<int:thread_id>
+```
+
+Get all the posts/replies of a thread
+```
+api/ threads/<int:thread_id>/posts 
+```
+
+Get the top 5 threads sorted by number of replies
+```
+api/ topThreads/
+```
+
+Get threads by topic
+```
+api/ threads/topic/<int:topic_id>
+```
+
+Create/add a new thread
+```
+api/ createThread/
+```
+
+Create/add a new post (reply a thread)
+```
+api/ createPost/ 
+```
+
+Add bookmark / Remove bookmark
+```
+api/ pin/ 
+
+```
+
+Check user's bookmark of a given thread
+```
+api/ pin/<int:thread_id>&&<int:user_id>
+```
+
+Get all bookmarked threads
+```
+api/ bookmark/<int:user_id> 
 ```
 
 
@@ -148,5 +174,6 @@ In this project, you are asked to build a web application of your own. The natur
 - In a README.md in your project’s main directory, include a writeup describing your project, and specifically your file MUST include all of the following:
 - If you’ve added any Python packages that need to be installed in order to run your web application, be sure to add them to a requirements.txt file!
 - Though there is not a hard requirement here, a README.md in the neighborhood of 500 words is likely a solid target, assuming the other requirements are also satisfied.
-## Demonstration
 
+## Demonstration
+To be added
