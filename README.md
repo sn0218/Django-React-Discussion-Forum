@@ -19,8 +19,27 @@ Django is used to build the web API and database to function the backend. There 
 The forum app is designed to be mobile responsive to adpat different resolutions by Material UI library. To enhance the authentication, token based authentication is used to manage the login and logout.
 
 ## Contained Files
-In `react-front` folder, it stores all the files of frontend.  
-`./build` a build directory with a production build of your app
+In `react-front` folder, it stores all the files of frontend built by React.  
+-   `./build` a build directory with a production build of the forum app.
+-   `./public` contain favicon and index.html etc.
+-   `./src` stores all files of React components and pages.
+    -   `./components` contain different components of forum app such as Header, footer, and various forms.
+    -   `./pages` store defined pages, for example, Home.js, Login.js and Thread.js etc.
+    -   `./utils` contain PrivateRoute.js for the implementation of private routes
+    -   `/App.css` styling of the forum app
+    -   `./index.js/` the top structure level of forum app which have App.js components as its child
+    -   `./App.js` the forum app components
+  
+In `myforum` folder, it contains settings and url configuration of the forum app.
+In `api` folder, it consists of a wide range of files of the backend and views.
+-   `./admin.py` registration of models
+-   `./apps.py`  app config
+-   `./models.py` defined database models
+-   `./serializers.py` different classes to serialize database models
+-   `./signals.py` automatically generate profile for each user creation
+-   `./tests.py` empty file
+-   `./urls.py` routes of the forum app API to provide endpoints for the client
+-   `./views.py` consists of different functions to build the API
 
 
 
