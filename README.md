@@ -43,7 +43,7 @@ The discussion forum application is built by Django and React. The forum web app
 
 ## Distinctiveness and Complexity
 
-This forum app is different from other projects in the course. This forum app is neither a social network nor an e-commerce site.  
+This forum app is different from other projects in the CS50 Web course. This forum app is neither a social network nor an e-commerce site.  
 
 The forum app exhibits different functionalities to provide an online platform for discussion. The forum app permits guests to view all the threads and posts without an account. There are different views to view threads sorted by different topics. Users who are authenticated can add a new threads to start a dicusssion and add post to reply own thread and threads created by other users. In addition, authenticated users can make bookmarks to threads and edit their avatar and biography in profile page..
 
