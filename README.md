@@ -1,4 +1,7 @@
 # Discussion forum application
+![image](https://user-images.githubusercontent.com/48129546/185688445-61e2566d-8fe1-4cba-9460-d937537e0df7.png)
+
+![image](https://user-images.githubusercontent.com/48129546/185688203-73d67086-9a7c-4380-be23-eed209b687f1.png)
 
 ## Description
 The discussion forum application is built by Django and React. The forum web app allows any user to view threads. Users can register and login to create new thread and reply to any threads to join any discussion.
