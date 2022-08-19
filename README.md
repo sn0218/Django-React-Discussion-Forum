@@ -5,9 +5,9 @@
 
 ## Mobile View
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/48129546/185688445-61e2566d-8fe1-4cba-9460-d937537e0df7.png" width="300" />
-    <img src="https://user-images.githubusercontent.com/48129546/185689253-0e0710fc-3e0b-477f-a3c3-160f3e874359.png" width="300"/>
-    <img src="https://user-images.githubusercontent.com/48129546/185689742-6ca65a9d-b384-4d2d-ad2e-4663acb47ff6.png" width="300"/>
+    <img src="https://user-images.githubusercontent.com/48129546/185688445-61e2566d-8fe1-4cba-9460-d937537e0df7.png" width="260" />
+    <img src="https://user-images.githubusercontent.com/48129546/185689253-0e0710fc-3e0b-477f-a3c3-160f3e874359.png" width="260"/>
+    <img src="https://user-images.githubusercontent.com/48129546/185689742-6ca65a9d-b384-4d2d-ad2e-4663acb47ff6.png" width="260"/>
 <p>
 
 
