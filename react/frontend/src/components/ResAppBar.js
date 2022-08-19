@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect,useContext} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -48,6 +48,27 @@ const ResAppBar = () => {
 
   let {user} = useContext(AuthContext)
   let {logoutUser} = useContext(AuthContext)
+  
+
+  // initalize thread and posts component state
+  const [profile, setProfile] = useState()
+
+  useEffect(()=> {
+    const getProfile = async () => {
+      if (user !== null) {
+        let userID = user['user_id']
+        const response = await fetch(`/api/profile/${userID}`)
+
+        // parse the data in json
+        let data = await response.json()
+
+        setProfile(data)
+      }
+        
+    }
+    getProfile()
+  }, [user])
+  
 
   return (
     <AppBar position="fixed" style={{ background: '#6a5acd' }}>
@@ -130,7 +151,7 @@ const ResAppBar = () => {
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
+              flexGrow: 0.6,
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '12',
@@ -151,9 +172,9 @@ const ResAppBar = () => {
                 <Typography
             noWrap
             component="a"
-            href="#"
+            href={`/profile/${user.user_id}`}
             sx={{
-              mr: 2,
+              mr: 1,
               p: 2,
               display: 'flex' ,
               fontFamily: 'monospace',
@@ -168,7 +189,7 @@ const ResAppBar = () => {
           
                <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="" />
+                  <Avatar alt="Remy Sharp" src={profile?.avatar} />
                 </IconButton>
               </Tooltip>
               
@@ -188,7 +209,7 @@ const ResAppBar = () => {
                 onClose={handleCloseUserMenu}
               >
 
-              <MenuItem key='profile' component={Link} to="/profile">
+              <MenuItem key='profile' component={Link} to={`/profile/${user['user_id']}`}>
                 <Typography textAlign="center">Profile</Typography>
 
               </MenuItem>

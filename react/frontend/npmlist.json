@@ -1,0 +1,90 @@
+{
+  "version": "0.1.0",
+  "name": "frontend",
+  "dependencies": {
+    "@emotion/react": {
+      "version": "11.10.0",
+      "resolved": "https://registry.npmjs.org/@emotion/react/-/react-11.10.0.tgz"
+    },
+    "@emotion/styled": {
+      "version": "11.10.0",
+      "resolved": "https://registry.npmjs.org/@emotion/styled/-/styled-11.10.0.tgz"
+    },
+    "@mui/icons-material": {
+      "version": "5.8.4",
+      "resolved": "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.8.4.tgz"
+    },
+    "@mui/material": {
+      "version": "5.10.0",
+      "resolved": "https://registry.npmjs.org/@mui/material/-/material-5.10.0.tgz"
+    },
+    "@testing-library/jest-dom": {
+      "version": "5.16.5",
+      "resolved": "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-5.16.5.tgz"
+    },
+    "@testing-library/react": {
+      "version": "13.3.0",
+      "resolved": "https://registry.npmjs.org/@testing-library/react/-/react-13.3.0.tgz"
+    },
+    "@testing-library/user-event": {
+      "version": "13.5.0",
+      "resolved": "https://registry.npmjs.org/@testing-library/user-event/-/user-event-13.5.0.tgz"
+    },
+    "bootstrap": {
+      "version": "5.2.0",
+      "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-5.2.0.tgz"
+    },
+    "jwt-decode": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/jwt-decode/-/jwt-decode-3.1.2.tgz"
+    },
+    "moment": {
+      "version": "2.29.4",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+    },
+    "react-avatar-editor": {
+      "version": "13.0.0",
+      "resolved": "https://registry.npmjs.org/react-avatar-editor/-/react-avatar-editor-13.0.0.tgz"
+    },
+    "react-bootstrap": {
+      "version": "2.5.0",
+      "resolved": "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-2.5.0.tgz"
+    },
+    "react-dom": {
+      "version": "18.2.0",
+      "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
+    },
+    "react-dropdown-select": {
+      "version": "4.9.0",
+      "resolved": "https://registry.npmjs.org/react-dropdown-select/-/react-dropdown-select-4.9.0.tgz"
+    },
+    "react-infinite-scroll-component": {
+      "version": "6.1.0",
+      "resolved": "https://registry.npmjs.org/react-infinite-scroll-component/-/react-infinite-scroll-component-6.1.0.tgz"
+    },
+    "react-moment": {
+      "version": "1.1.2",
+      "resolved": "https://registry.npmjs.org/react-moment/-/react-moment-1.1.2.tgz"
+    },
+    "react-router-dom": {
+      "version": "6.3.0",
+      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.3.0.tgz"
+    },
+    "react-scripts": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/react-scripts/-/react-scripts-5.0.1.tgz"
+    },
+    "react-select": {
+      "version": "5.4.0",
+      "resolved": "https://registry.npmjs.org/react-select/-/react-select-5.4.0.tgz"
+    },
+    "react": {
+      "version": "18.2.0",
+      "resolved": "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+    },
+    "web-vitals": {
+      "version": "2.1.4",
+      "resolved": "https://registry.npmjs.org/web-vitals/-/web-vitals-2.1.4.tgz"
+    }
+  }
+}

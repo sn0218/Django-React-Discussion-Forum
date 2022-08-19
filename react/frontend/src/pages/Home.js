@@ -50,7 +50,10 @@ const ThreadListPage = () => {
       setTopThreads(data)
     }
     getTopThreads()
+
+    
   }, [])
+  
 
   useEffect(() => {
       const getThreads = async () => {
@@ -180,7 +183,7 @@ const ThreadListPage = () => {
           </div>
           {topThreads.map((thread, index) => 
            
-            <Box sx={{ minWidth: 275,  marginTop: 2 }} key={index}>
+            <Box sx={{ minWidth: 275,  marginTop: 2 }} key={index} >
             <Link to = {`/threads/${thread.id}`} style={{ textDecoration: 'none', color: 'black' }}>
             <Card className='hotTopics' variant="outlined" key={index}>
             <React.Fragment>

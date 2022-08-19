@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom'
 
 const PostCardItem = ({post}) => {
     
@@ -15,7 +16,9 @@ const PostCardItem = ({post}) => {
             </Typography>
 
             <Typography sx={{ m: 1, p: 1 }} color="text.secondary">
-            {post?.creator} posted on {post?.created}
+            <Link to={`/profile/${post?.creator_id}`} style={{  color: "grey"}}>
+              {post?.creator}
+              </Link> posted on {post?.created}
             </Typography>
 
           </CardContent>  

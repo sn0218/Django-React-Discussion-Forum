@@ -19,7 +19,7 @@ body { margin: 0;
 }
 
 .hotTopics:hover {
-  box-shadow: -1px 5px 5px 0px rgba(82, 25, 216, 0.514);
+  box-shadow: -1px 3px 3px 0px rgba(82, 25, 216, 0.158);
 }
 
 .thread-list:hover {

@@ -1,0 +1,14 @@
+asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
+certifi==2020.6.20
+Django @ file:///tmp/build/80754af9/django_1625585912945/work
+django-cors-headers==3.13.0
+djangorestframework==3.13.1
+djangorestframework-simplejwt==5.2.0
+markdown2 @ file:///tmp/build/80754af9/markdown2_1611515890263/work
+Pillow==9.2.0
+psycopg2 @ file:///C:/ci_310/psycopg2_1642085998310/work
+PyJWT==2.4.0
+pytz==2021.3
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+typing_extensions @ file:///opt/conda/conda-bld/typing_extensions_1647553014482/work
+wincertstore==0.2

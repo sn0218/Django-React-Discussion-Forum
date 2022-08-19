@@ -7,8 +7,8 @@ class User(AbstractUser):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=32, default='')
-    bio = models.TextField(max_length=500, blank=True, default='')
-    avatar = models.URLField(default='', blank=True)
+    bio = models.TextField(max_length=500, default="Hello world")
+    avatar = models.URLField(default=None)
     status = models.CharField(max_length=16, blank=True, default='')
 
     def __str__(self):

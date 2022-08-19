@@ -5,8 +5,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+
 urlpatterns = [
-    path('', views.getRoutes, name='getRoute'),
     path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('register/', views.RegisterView.as_view(), name='auth_register'),
@@ -20,6 +20,6 @@ urlpatterns = [
     path('pin/', views.bookmark, name='bookmark'),
     path('pin/<int:thread_id>&&<int:user_id>', views.checkBookmarked, name='checkBookmarked'),
     path('bookmark/<int:user_id>', views.getBookmarkedThreads, name="getBookmarkedThreads"),
-    path('profile/<int:user_id>', views.profile, name='profile')
+    path('profile/<int:user_id>', views.profile, name='profile'),
 
 ]

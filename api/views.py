@@ -119,7 +119,7 @@ def createPost(request):
                 {"res": "Unauthenticated user"}, 
                 status=status.HTTP_401_UNAUTHORIZED
             )
-
+    print(data)
     content = data['content']
     threadID = data['thread']
 
@@ -206,7 +206,7 @@ def getTopThreads(request):
 @api_view(['GET'])
 def getThreadsTopic(request, topic_id):
     paginator = PageNumberPagination()
-    paginator.page_size = 2
+    paginator.page_size = 10
 
     # get threads by topic
     threads = Thread.objects.filter(topic=topic_id).all().order_by('-updated')
@@ -217,13 +217,35 @@ def getThreadsTopic(request, topic_id):
     return paginator.get_paginated_response(serializer.data)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'PUT'])
 def profile(request, user_id):
-    # get profile
-    profile = Profile.objects.get(pk=user_id)
+    if request.method == "GET":
+        # get profile
+        profile = Profile.objects.get(pk=user_id)
+        serializer = ProfileSerializer(profile, many=False)
+        return Response(serializer.data)
 
-    serializer = ProfileSerializer(profile, many=False)
-    return Response(serializer.data)
+    elif request.method == "PUT":
+        try:
+            profile = Profile.objects.get(pk=user_id)
+        except Profile.DoesNotExist:
+            return Response({"res": "The profile is not found."}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+      
+        data = json.loads(request.body)
+        bio = data.get("bio")
+        avatar = data.get("avatar")
+
+        # update the profile
+        profile.bio = bio
+        profile.avatar = avatar
+        profile.save()
+
+        return Response({"res": "The profile is updated sucessfully."})
+
+
+
 
 
 

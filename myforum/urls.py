@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import JsonResponse
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+    path('', TemplateView.as_view(template_name='index.html')),
+    path('login/', TemplateView.as_view(template_name='index.html')),
+    path('signup/', TemplateView.as_view(template_name='index.html')),
+    path('threads/<int:id>', TemplateView.as_view(template_name='index.html')),
+    path('profile/<int:id>', TemplateView.as_view(template_name='index.html'))
+
+ 
 ]

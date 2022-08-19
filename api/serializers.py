@@ -46,21 +46,48 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class ThreadSerializer(ModelSerializer):
+    creator_id = serializers.SerializerMethodField('creator_id')
+
+    def creator_id(self):
+        creator_id = serializers.IntegerField()
+        return creator_id 
+
     creator = serializers.CharField()
     created = serializers.DateTimeField(format="%d-%m-%Y %H:%M:%S")
-    #updated = serializers.DateTimeField(format="%d-%m-%Y %H:%M:%S")
+
     class Meta:
         model = Thread
-        fields = '__all__'
+        fields = ("id",
+                    "creator",
+                    "created",
+                    "subject",
+                    "content",
+                    "topic",
+                    "updated",
+                    "replyCount",
+                    "creator_id")
 
 
 class PostSerializer(ModelSerializer):
+    creator_id = serializers.SerializerMethodField('creator_id')
+
+    def creator_id(self):
+        creator_id = serializers.IntegerField()
+        return creator_id 
+
     creator = serializers.CharField()
     created = serializers.DateTimeField(format="%d-%m-%Y %H:%M:%S")
     updated = serializers.DateTimeField(format="%d-%m-%Y %H:%M:%S")
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = (("id",
+                    "creator",
+                    "created",
+                    "content",
+                    "updated",
+                    "thread",
+                    "creator_id"))
+
 
 class PinSerializer(ModelSerializer):
     class Meta:

@@ -10,7 +10,7 @@ import ReplyForm from '../components/ReplyForm'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Grid from '@mui/material/Grid';
 import AuthContext from '../context/AuthContext'
-
+import { Link } from 'react-router-dom'
 import BookmarkAddedRoundedIcon from '@mui/icons-material/BookmarkAddedRounded';
 import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import ShareIcon from '@mui/icons-material/Share';
@@ -37,26 +37,30 @@ const Thread = () => {
   // update bookmark icon for the thread
   useEffect( ()=> {
     let getBookmark = async () => {
-      let response = await fetch(`/api/pin/${threadID}&&${user['user_id']}`)
-      let data = await response.json()
-      setPin(JSON.parse(data.pinned))
+      if (user !== null) {
+        let response = await fetch(`/api/pin/${threadID}&&${user['user_id']}`)
+        let data = await response.json()
+        setPin(JSON.parse(data.pinned))
+      }
     }
     getBookmark()
 
   },[threadID]) 
 
 
-  // trigger update
+  // trigger thread update
   useEffect(() => {
       let getThread = async () => {
           let response = await fetch(`/api/threads/${threadID}`)
           let data = await response.json()
           setThread(data)
+         
       }
       
       getThread()
   }, [threadID])
   
+  // trigger posts update
   useEffect(() => {
       let getPosts = async () => { 
           // fetch the posts from api endpoint
@@ -138,7 +142,7 @@ const Thread = () => {
        
           <CardContent>
             <Grid container justifyContent="space-between">
-              <Typography sx={{ m: 1, p: 1 }} variant="h5" component="div">
+              <Typography sx={{ m: 1, p: 1 }} variant="h6" component="div">
                 {thread?.subject} 
                 
               </Typography>
@@ -153,7 +157,9 @@ const Thread = () => {
             </Typography>
 
             <Typography sx={{ m: 1, p: 1 }} color="text.secondary">
-            {thread?.creator} posted on {thread?.created}
+            <Link to={`/profile/${thread?.creator_id}`} style={{  color: "grey"}}>
+              {thread?.creator}
+              </Link> posted on {thread?.created}
             </Typography>
 
           </CardContent>  
@@ -207,4 +213,4 @@ const Thread = () => {
   )
 }
 
-export default Thread
+export default Thread;

@@ -37,9 +37,10 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/threads/:id" element={<Thread />} />
           <Route path="/topic/:id" element={<Topic />} />
+          <Route path="/profile/:id" element={<Profile />} exact/>
           <Route  element={<PrivateRoute />}>
             <Route path="/bookmark" element={<Bookmark />} exact/>
-            <Route path="/profile" element={<Profile />} exact/>
+            
           </Route>
         </Routes>
         <Footer />

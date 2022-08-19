@@ -29,58 +29,66 @@ const Topic = () => {
     
     
   // initalize thread and posts component state
-  let [threads, setThreads] = useState([])
+  const [threads, setThreads] = useState([])
   const [page, setPage] = useState(2)
   const [hasMore, setHasMore] = useState(true)
 
   // trigger update depends on params of URL
   useEffect(() => {
     const getThreads = async () => {
-        
-      try {
-          // fetch the threads from api endpoint
-        const response = await fetch(`/api/threads/topic/${topicID}`)
+    // fetch the threads from api endpoint
+    const response = await fetch(`/api/threads/topic/${topicID}?page=1`)
 
-        // parse the data in json
-        let data = await response.json()
-    
-        // update the state of threads
-        setThreads(data.results)
+    // parse the data in json
+    let data = await response.json()
 
+    // update the state of threads
+    setThreads(data.results)
 
-      } catch (err) {
-          console.log("Unauthenticated user accesses.")
-      }
-    
+    // check if there is more threads
+    if (data.next === null) {
+      setHasMore(false)
     }
-    getThreads()   
+
+  }
+  getThreads()   
 
 }, [params])
 
 
 // fetch next page threads
 const getMoreThreads = async () => {
+  try {
     // fetch the threads from api endpoint
     const response = await fetch(`/api/threads/topic/${topicID}?page=${page}`)
+    
     // parse the data in json
     let data = await response.json()
     console.log("fetching")
+    console.log(data)
+  
+  return data.results
+  } catch (err) {
+    console.log("No next page.")
+  }
+  
     
-    return data.results
 }
 
 const fetchData = async () => {
     // get more threads from next fetch
     const moreThreads = await getMoreThreads()
-
+  
     // update the thread state by combining data
     setThreads([...threads, ...moreThreads])
-    
+
     // check the fetch of last page, if yes, HasMore is false
-    if (moreThreads.length === 0 || moreThreads.length < 2) {
+    if (moreThreads.length === 0 || moreThreads.length < 10) {
         setHasMore(false)
-    }
+    } 
     setPage(page + 1)
+    
+    
 }
 
   // style the paper component
