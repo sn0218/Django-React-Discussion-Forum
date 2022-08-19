@@ -163,7 +163,6 @@ api/createPost/
 Add bookmark / Remove bookmark
 ```
 api/pin/ 
-
 ```
 
 Check user's bookmark of a given thread
