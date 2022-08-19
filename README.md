@@ -5,8 +5,7 @@
     <img src="https://user-images.githubusercontent.com/48129546/185688445-61e2566d-8fe1-4cba-9460-d937537e0df7.png" />
     <img src="https://user-images.githubusercontent.com/48129546/185689253-0e0710fc-3e0b-477f-a3c3-160f3e874359.png"/>
 <p>
-![image](https://user-images.githubusercontent.com/48129546/185688445-61e2566d-8fe1-4cba-9460-d937537e0df7.png)
-![image](https://user-images.githubusercontent.com/48129546/185689253-0e0710fc-3e0b-477f-a3c3-160f3e874359.png)
+
 
 ## Description
 The discussion forum application is built by Django and React. The forum web app allows any user to view threads. Users can register and login to create new thread and reply to any threads to join any discussion.
