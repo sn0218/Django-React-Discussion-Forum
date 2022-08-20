@@ -33,7 +33,7 @@ The discussion forum application is built by Django and React. The forum web app
 -   Guest / unauthenticated user browse all the threads and posts
 
 
-### Tech Stack
+## Tech Stack
 -   Python Django
 -   React.js
 -   HTML5 / CSS
