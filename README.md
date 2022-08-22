@@ -175,6 +175,8 @@ Get all bookmarked threads
 api/bookmark/<int:user_id> 
 ```
 
+## Further work
+    - writing unit test
 
 ## Requirements
 In this project, you are asked to build a web application of your own. The nature of the application is up to you, subject to a few requirements:
