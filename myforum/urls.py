@@ -25,7 +25,8 @@ urlpatterns = [
     path('login/', TemplateView.as_view(template_name='index.html')),
     path('signup/', TemplateView.as_view(template_name='index.html')),
     path('threads/<int:id>', TemplateView.as_view(template_name='index.html')),
-    path('profile/<int:id>', TemplateView.as_view(template_name='index.html'))
+    path('profile/<int:id>', TemplateView.as_view(template_name='index.html')),
+    path('topic/<int:id>', TemplateView.as_view(template_name='index.html'))
 
  
 ]
