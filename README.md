@@ -1,5 +1,16 @@
 # Discussion forum application
 
+## Desktop View
+<img src="https://user-images.githubusercontent.com/48129546/185688203-73d67086-9a7c-4380-be23-eed209b687f1.png" width="900"/>
+
+## Mobile View
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/48129546/185688445-61e2566d-8fe1-4cba-9460-d937537e0df7.png" width="260" />
+    <img src="https://user-images.githubusercontent.com/48129546/185689253-0e0710fc-3e0b-477f-a3c3-160f3e874359.png" width="260"/>
+    <img src="https://user-images.githubusercontent.com/48129546/185689742-6ca65a9d-b384-4d2d-ad2e-4663acb47ff6.png" width="260"/>
+<p>
+
+
 ## Description
 The discussion forum application is built by Django and React. The forum web app allows any user to view threads. Users can register and login to create new thread and reply to any threads to join any discussion.
 
@@ -22,28 +33,14 @@ The discussion forum application is built by Django and React. The forum web app
 -   Guest / unauthenticated user browse all the threads and posts
 
 
-### Tech Stack
+## Tech Stack
 -   Python Django
 -   React.js
 -   HTML5 / CSS
 -   Material UI
 -   React Bootstrap
 -   sqlite3
--   
-
-## Distinctiveness and Complexity
-
-This forum app is different from other projects in the course. This forum app is neither a social network nor an e-commerce site.  
-
-The forum app exhibits different functionalities to provide an online platform for discussion. The forum app permits guests to view all the threads and posts without an account. There are different views to view threads sorted by different topics. Users who are authenticated can add a new threads to start a dicusssion and add post to reply own thread and threads created by other users. In addition, authenticated users can make bookmarks to threads and edit their avatar and biography in profile page..
-
-The complexity of the forum app is higher than any projects in CS50 Web. The forum app separates the frontend and backend into two technologies. The frontend and user interface is built by JavaScript Library React and the backend is built by Django. React provides component based architecture to manipulate the DOM easily to create a single-page forum app, so we don't need Django to render the html pages.  
-
-In the user interface, infinite scroll is employed to replace pagination to provide users smoother experience to browse threads in different devices. Viewing most of the pages in this forum app does not require any reload and refresh of the page given the advantages of React.  
-
-Django is used to build the web API and database to function the backend. There are 4 django models to create the database to store forum data. The backend has various endpoints available through the created API to allow the client side to retrieve and return data.  
-
-The forum app is designed to be mobile responsive to adpat different resolutions by Material UI library. To enhance the authentication, token based authentication (JWT) is used to manage signup, login and logout.
+-   Django REST framework
 
 
 ## Contained Files
@@ -152,7 +149,6 @@ api/createPost/
 Add bookmark / Remove bookmark
 ```
 api/pin/ 
-
 ```
 
 Check user's bookmark of a given thread
@@ -165,6 +161,9 @@ Get all bookmarked threads
 api/bookmark/<int:user_id> 
 ```
 
+## Further work
+- deploy to heroku
+- writing unit test
 
 ## Requirements
 In this project, you are asked to build a web application of your own. The nature of the application is up to you, subject to a few requirements:
@@ -183,4 +182,5 @@ In this project, you are asked to build a web application of your own. The natur
 - Though there is not a hard requirement here, a README.md in the neighborhood of 500 words is likely a solid target, assuming the other requirements are also satisfied.
 
 ## Demonstration
-To be added.
+Watch the video in YouTube!
+:point_right:https://youtu.be/zzLLeG3HUvA
