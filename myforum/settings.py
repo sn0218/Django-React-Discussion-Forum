@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',
+    'whitenoise.runserver_nostatic',
 ]
 
 
@@ -109,7 +110,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-             'react/frontend/build'
+            os.path.join(BASE_DIR, 'react/frontend/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -176,7 +177,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-   'react/frontend/build/static'
+   os.path.join(BASE_DIR, 'react/frontend/build/static') 
 ]
 
 # Default primary key field type
