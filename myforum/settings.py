@@ -109,7 +109,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, '../react/frontend/build')
+             'react/frontend/build'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -176,7 +176,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, '../react/frontend/build/static') 
+   'react/frontend/build/static'
 ]
 
 # Default primary key field type
