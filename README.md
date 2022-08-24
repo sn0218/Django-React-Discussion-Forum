@@ -162,6 +162,7 @@ api/bookmark/<int:user_id>
 ```
 
 ## Further work
+- deploy to heroku
 - writing unit test
 
 ## Requirements
