@@ -1,2 +1,1 @@
-web: gunicorn myforum.wsgi --log-file -
-web: python manage.py runserver 8.0.0.0:$PORT --noreload
+web:gunicorn myforum.wsgi --log-file -
