@@ -110,7 +110,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'react/frontend/build')
+            './react/frontend/build'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
