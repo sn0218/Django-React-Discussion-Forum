@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     
 
     # configure application
-    'api',
+    'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',
@@ -180,7 +180,7 @@ USE_TZ = True
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATIC_URL = '/static/'
+STATIC_URL = '/react/frontend/build/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'react/frontend/build/static'), )
 
 
