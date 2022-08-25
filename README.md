@@ -73,9 +73,9 @@ The React app is already integrated to Django app for an easy start.
 First, clone or download the repository from gitHub
 To run the application, please following commands.
 ```
-python3 -m venv env
+virtualenv myenv
 
-source env/bin/activate
+myenv\Scripts\activate
 
 pip install -r requirements.txt
 
