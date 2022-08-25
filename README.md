@@ -44,7 +44,7 @@ The discussion forum application is built by Django and React. The forum web app
 
 
 ## Contained Files
-In `react-front` folder, it stores all the files of frontend built by React.  
+In `frontend` folder, it stores all the files of frontend built by React.  
 -   `./build` a build directory with a production build of the forum app.
 -   `./public` contain favicon and index.html etc.
 -   `./src` stores all files of React components and pages.
