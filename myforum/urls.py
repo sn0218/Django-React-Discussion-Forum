@@ -28,6 +28,5 @@ urlpatterns = [
     path('signup/', TemplateView.as_view(template_name='index.html')),
     path('threads/<int:id>', TemplateView.as_view(template_name='index.html')),
     path('profile/<int:id>', TemplateView.as_view(template_name='index.html')),
-    path('topic/<int:id>', TemplateView.as_view(template_name='index.html')),
-    re_path('.*',TemplateView.as_view(template_name='index.html'))
+    path('topic/<int:id>', TemplateView.as_view(template_name='index.html'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
