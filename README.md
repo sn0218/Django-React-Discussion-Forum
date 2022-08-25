@@ -70,8 +70,8 @@ In `api` folder, it consists of a wide range of files of the backend and views.
 
 ## Getting Started 
 The React app is already integrated to Django app for an easy start.  
-First, clone or download the repository from gitHub
-To run the application in local, please following commands.
+First, clone or download the repository from gitHub.  
+To run the application in local, please following commands.  
 ```
 virtualenv myenv
 
