@@ -44,7 +44,7 @@ The discussion forum application is built by Django and React. The forum web app
 
 
 ## Contained Files
-In `frontend` folder, it stores all the files of frontend built by React.  
+In `src`, `public` folder, it stores all the files of frontend built by React.  
 -   `./build` a build directory with a production build of the forum app.
 -   `./public` contain favicon and index.html etc.
 -   `./src` stores all files of React components and pages.
@@ -71,7 +71,7 @@ In `api` folder, it consists of a wide range of files of the backend and views.
 ## Getting Started 
 The React app is already integrated to Django app for an easy start.  
 First, clone or download the repository from gitHub
-To run the application, please following commands.
+To run the application in local, please following commands.
 ```
 virtualenv myenv
 
